@@ -1,12 +1,13 @@
 import joblib
 import streamlit as st
 
-# ===============================
-# Load Model
-# ===============================
+@st.cache_resource
+def load_model():
+    model = joblib.load("model/fake_news_model.pkl")
+    vectorizer = joblib.load("model/vectorizer.pkl")
+    return model, vectorizer
 
-model = joblib.load("model/fake_news_model.pkl")
-vectorizer = joblib.load("model/vectorizer.pkl")
+model, vectorizer = load_model()
 
 # ===============================
 # Page Configuration
@@ -155,8 +156,6 @@ with col1:
     check = st.button("🔍 Check News")
 
 
-
-    st.rerun()
 # ===============================
 # Prediction
 # ===============================
