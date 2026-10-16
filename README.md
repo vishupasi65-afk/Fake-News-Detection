@@ -69,7 +69,7 @@ python -m streamlit run app.py
 
 ## Author
 
-**Akash Kumar Mandal**
+**Vishal Kumar Paswan**
 
 Data Science Internship Project
 Pinnacle Labs
